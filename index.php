@@ -1,18 +1,15 @@
 <?php
-header("Content-Type:text/html; charset=utf-8");
-include("config/config.php");
-include(DIRREQ."lib/vendor/autoload.php");
+require "controller/homeController.php";
 
-use traits\traitparseUrl;
+$pagina = explode( '/', $_SERVER['REQUEST_URI']);
+$ctrl = new homeController();
 
-class ClassTeste {
-    use traitparseurl;
-public function __construct() 
-    {
-     var_dump($this->parseurl());
-    }
+switch($pagina[1]){
+  case "index":
+  $ctrl->index();
+  break;
+
+  default:
+  $ctrl->index();
+  break;
 }
-
-$teste = new ClassTeste();
-
-
