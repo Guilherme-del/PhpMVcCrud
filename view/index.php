@@ -27,7 +27,7 @@
     <p><input type="email" placeholder="Email"></p>
     <p>
       <input id="password-field" type="password" class="form-control" name="password" placeholder="Senha">
-      <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+      <abbr title="Ver senha"><span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span></abbr>
     </p>
 
     <p><input type="submit" value="Entrar">

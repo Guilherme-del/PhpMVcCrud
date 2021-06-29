@@ -137,11 +137,12 @@ div h3 {
 }
 
 .field-icon {
-position: relative;
-padding: 12px;
-margin: auto;
-margin-left: -25px;
+
+padding: 12px 20px;
+margin-left: -45px;
 margin-top: -25px;
+cursor: pointer;
+background-color: var(--azul);
 }
 
 .login input[type="submit"] {
