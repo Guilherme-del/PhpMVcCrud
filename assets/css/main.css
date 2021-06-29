@@ -7,42 +7,67 @@
 :root {
   /* define variáveis no css */
   --azul: #1E90FF;
-  --preta: #181717;
+  --preta: #1d1c1c;
 }  
 
 *{ margin: 0;padding: 0;box-sizing: border-box; /* limita os elementos na borda da caixa*/}
 
 body {
-  display: block;
-  font-family: "Open Sans", sans-serif;
-  font-size: 15px;
-  line-height: 1.5;
-  margin: 0;
   height: 100%;
   width: 100%;
   overflow-x: hidden;
   background-color: var(--preta);
 }
 
+div {   
+  width: 49.9%;
+  max-height: 900px;
+  display: inline-block;
+  Margin: -1.89px;
+}
 
-#div1 {
-     
+#div1 { 
+ display: inline-block;
 }
 
 #div2 {    
-    background-color: teal;
+    position: fixed; 
+    margin-top: 7%;
+    margin-left: 100px;
 }
 
-div {   
-    width: 50%;
-    height: 650px;
-    display: inline-block;
-    Margin: -1.89px;
+div img {
+  position: relative;
+  display: inline-block;
+  padding-top: 20px;
+  height: 90%;
+  width:90%;
+}
+
+div h2 {
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  padding-top: 200px;
+  height: 90%;
+  width:90%;
+  color: var(--azul);
+  font-size: 40px;
+}
+
+div h3 {
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  padding-top: 20px;
+  height: 90%;
+  width:90%;
+  color: #fff;
 }
 
 .slider{
   position: relative;
-  width:50%;
+  width:49.90%;
   height: 90%;
 }
 
@@ -52,6 +77,7 @@ div {
   border-radius: 5px;
   animation: fadeInSlide 1s;
   text-align: center;
+
 }
 
 .slider-bullet{
@@ -63,4 +89,73 @@ div {
   border-radius: 50%;
   transition:1s;
   cursor: pointer;
+}
+
+.login-header {
+  background: #28d;
+  padding: 20px;
+  font-size: 1.4em;
+  font-weight: normal;
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.login-container {
+  padding: 12px;
+  margin: auto;
+  background-color: #fff;
+}
+
+/* Every row inside .login-container is defined with p tags */
+.login p {
+  padding: 12px;
+}
+
+.login input {
+  box-sizing: border-box;
+  width: 100%;
+  border-width: 1px;
+  border-style: solid;
+  padding: 16px;
+  font-family: inherit;
+  font-size: 0.95em;
+  margin: auto;
+}
+
+.login input[type="email"],
+.login input[type="password"] {
+  background: #fff;
+  border-color: #bbb;
+  color: #555;
+}
+
+/* Text fields' focus effect */
+.login input[type="email"]:focus,
+.login input[type="password"]:focus {
+  border-color: #888;
+}
+
+.field-icon {
+position: relative;
+padding: 12px;
+margin: auto;
+margin-left: -25px;
+margin-top: -25px;
+}
+
+.login input[type="submit"] {
+  background: #28d;
+  border-color: transparent;
+  color: #fff;
+  cursor: pointer;
+}
+
+.login input[type="submit"]:hover {
+  background: #17c;
+}
+
+/* Buttons' focus effect */
+.login input[type="submit"]:focus {
+  border-color: #05a;
 }

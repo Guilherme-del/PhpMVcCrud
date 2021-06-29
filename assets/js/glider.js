@@ -1,7 +1,6 @@
 function slider(){
   const slider = document.querySelectorAll('.slide');
-  //Set your timer here :
-  const timer = 4000;
+  const timer = 6000; //seting timer
   slider[0].style.display = 'block';
   bullets = sliderBulletsCreation(slider);
   sliderLoop(slider, timer, bullets);
@@ -34,8 +33,8 @@ function sliderAnim(slider, i, timer, bullets){
   bullets.forEach(function(bullet){
     bullet.style.backgroundColor = "#e5e5e5";
   })
-  slider[i].style.display = 'block';
-  bullets[i].style.backgroundColor = "#774898";
+  slider[i].style.display = 'inline-block';
+  bullets[i].style.backgroundColor = "#1E90FF";
   if (i == (slider.length - 1)){setTimeout(sliderLoop.bind(null,slider, timer, bullets), timer)};
 };
 
