@@ -1,6 +1,6 @@
 function slider(){
   const slider = document.querySelectorAll('.slide');
-  const timer = 1000; //seting timer
+  const timer = 6000; //seting timer
   slider[0].style.display = 'block';
   bullets = sliderBulletsCreation(slider);
   sliderLoop(slider, timer, bullets);

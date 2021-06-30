@@ -137,12 +137,10 @@ div h3 {
 }
 
 .field-icon {
-
-padding: 12px 20px;
-margin-left: -45px;
-margin-top: -25px;
+padding: 2px 20px;
+margin-left: 85%;
 cursor: pointer;
-background-color: var(--azul);
+
 }
 
 .login input[type="submit"] {
@@ -159,4 +157,10 @@ background-color: var(--azul);
 /* Buttons' focus effect */
 .login input[type="submit"]:focus {
   border-color: #05a;
+}
+
+.msg_error {
+  color:#ff6d6d;
+  display: flex;
+  justify-content: center;
 }
