@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 @keyframes fadeInSlide{
     from  {opacity: 0;}
     to    {opacity: 1;}
@@ -10,7 +11,7 @@
   --preta: #1d1c1c;
 }  
 
-*{ margin: 0;padding: 0;box-sizing: border-box; /* limita os elementos na borda da caixa*/}
+*{ margin: 0;padding: 0;box-sizing: border-box; /* limita os elementos na borda da caixa*/font-family: 'Roboto', sans-serif;}
 
 body {
   height: 100%;
@@ -164,3 +165,4 @@ cursor: pointer;
   display: flex;
   justify-content: center;
 }
+
