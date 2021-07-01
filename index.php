@@ -1,6 +1,6 @@
 <?php
 require "app/controller/homeController.php";
-require_once "lib/conexao/database";
+require_once "lib/conexao/database/connection.php";
 
 $pagina = explode( '/', $_SERVER['REQUEST_URI']);
 $ctrl = new homeController();
@@ -10,9 +10,9 @@ switch($pagina[1]){
   $ctrl->index();
   break;
     
-  case "login":
+  /*case "login":
   $ctrl->login();
-  break;  
+  break;*/ 
 
   default:
   $ctrl->index();

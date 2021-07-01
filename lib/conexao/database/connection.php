@@ -1,5 +1,7 @@
 <?php
-    
+
+    // usar namespace é importante caso for trabalhar com mais de uma classe de Conexão
+    namespace login\database;
     // Lembrete: classes abstratas não podem ser instanciadas
     abstract class Connection
     {
@@ -11,8 +13,9 @@
         {
             // utiliza self:: ao invés de this-> porque é um atributo estático
             if(!self::$conn) {
-                self::$conn = new PDO('mysql: host=localhost; dbname=login', 'root', '');
+                self::$conn = new \PDO('mysql: host=localhost; dbname= login', 'root','admin');
             }
+
             return self::$conn;
         }
 
