@@ -7,7 +7,6 @@ class homeController{
   public function index(){
     include "app/view/index.php";}
  
-
   public function check (){
     try{
     $user = new User;
@@ -15,6 +14,7 @@ class homeController{
     $user -> setSenha($_POST['senha']);
     $user -> validateLogin();  
     
+    include "app/view/dashboard.php";    
   }   
      
     catch(Exception $e){

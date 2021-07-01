@@ -1,1 +1,1 @@
-INSERT INTO `login`.`usuarios` (`nome`, `emial`, `senha`) VALUES ('teste', 'teste@teste.com', '123456');
+INSERT INTO `login`.`usuarios` (`nome`, `email`, `senha`) VALUES ('teste', 'teste@teste.com', '123456');

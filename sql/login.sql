@@ -1,7 +1,7 @@
 CREATE TABLE `login`.`usuarios` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(45) CHARACTER SET 'utf8' NULL,
-  `emial` VARCHAR(45) NOT NULL,
+  `email` VARCHAR(45) NOT NULL,
   `senha` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE)

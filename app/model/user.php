@@ -1,5 +1,7 @@
 <?php
 
+use conexao\database\Connection;
+
 class User 
     {
     private $id;
@@ -9,9 +11,30 @@ class User
 
 
     public function validateLogin(){
-        //Conecta ao banco
-        //selecionar o user que tenha o mesmo email do informado
-        //conferir a senha do usuario se estiver ok criar a session e direcionar para a tela dashboard se tiver algum erro redirecionar de volta para a tela inicial
+
+        $conn = Connection::getConn();
+            
+        $sql = 'SELECT * FROM usuarios WHERE email = :email';
+
+        $stmt = $conn->prepare($sql);
+        $stmt->bindValue(':email', $this->email);
+        $stmt->execute();
+
+        if ($stmt->rowCount())
+        {
+            $result = $stmt->fetch();
+
+            if ($result['password'] === $this->password) {
+                $_SESSION['usr'] = array(
+                    'id_user' => $result['id'],
+                    'name_user' => $result['name']
+                );
+
+                return true;
+            }
+        }
+
+        throw new \Exception('Login inválido');
     }
 
     public function setEmail ($email){
