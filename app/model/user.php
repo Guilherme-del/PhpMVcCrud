@@ -13,8 +13,8 @@ class User
     public function validateLogin(){
 
         $conn = Connection::getConn();
-            
-        $sql = 'SELECT * FROM usuarios WHERE email = :email';
+             
+        $sql = 'SELECT * FROM usuarios WHERE email = :email'; // :email impede invasões do tipo sqlinjection (um pouco de segurança a mais para o site)
 
         $stmt = $conn->prepare($sql);
         $stmt->bindValue(':email', $this->email);
@@ -26,7 +26,7 @@ class User
 
             if ($result['password'] === $this->password) {
                 $_SESSION['usr'] = array(
-                    'id_user' => $result['id'],
+                    'id_user'   => $result['id'],
                     'name_user' => $result['name']
                 );
 

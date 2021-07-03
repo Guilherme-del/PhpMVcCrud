@@ -7,24 +7,24 @@
 
 :root {
   /* define variáveis no css */
-  --azul: #1E90FF;
+  --azul : #1E90FF;
   --preta: #1d1c1c;
 }  
 
 *{ margin: 0;padding: 0;box-sizing: border-box; /* limita os elementos na borda da caixa*/font-family: 'Roboto', sans-serif;}
 
 body {
-  height: 100%;
-  width: 100%;
-  overflow-x: hidden;
+  height          : 100%;
+  width           : 100%;
+  overflow-x      : hidden;
   background-color: var(--preta);
 }
 
 div {   
-  width: 49.9%;
+  width     : 49.9%;
   max-height: 900px;
-  display: inline-block;
-  Margin: -1.89px;
+  display   : inline-block;
+  Margin    : -1.89px;
 }
 
 #div1 { 
@@ -32,79 +32,79 @@ div {
 }
 
 #div2 {    
-    position: fixed; 
-    margin-top: 7%;
+    position   : fixed;
+    margin-top : 7%;
     margin-left: 100px;
 }
 
 div img {
-  position: relative;
-  display: inline-block;
+  position   : relative;
+  display    : inline-block;
   padding-top: 20px;
-  height: 90%;
-  width:90%;
+  height     : 90%;
+  width      : 90%;
 }
 
 div h2 {
-  text-align: center;
-  position: relative;
-  display: inline-block;
+  text-align : center;
+  position   : relative;
+  display    : inline-block;
   padding-top: 200px;
-  height: 90%;
-  width:90%;
-  color: var(--azul);
-  font-size: 40px;
+  height     : 90%;
+  width      : 90%;
+  color      : var(--azul);
+  font-size  : 40px;
 }
 
 div h3 {
-  text-align: center;
-  position: relative;
-  display: inline-block;
+  text-align : center;
+  position   : relative;
+  display    : inline-block;
   padding-top: 20px;
-  height: 90%;
-  width:90%;
-  color: #fff;
+  height     : 90%;
+  width      : 90%;
+  color      : #fff;
 }
 
 .slider{
   position: relative;
-  width:49.90%;
-  height: 90%;
+  width   : 49.90%;
+  height  : 90%;
 }
 
 .slide{
-  width:200%;
-  height: 80%;
+  width        : 200%;
+  height       : 80%;
   border-radius: 5px;
-  animation: fadeInSlide 1s;
-  text-align: center;
+  animation    : fadeInSlide 1s;
+  text-align   : center;
 
 }
 
 .slider-bullet{
-  position: absolute;
-  top: 440px;
-  height: 10px;
-  width: 10px;
+  position        : absolute;
+  top             : 440px;
+  height          : 10px;
+  width           : 10px;
   background-color: #e5e5e5;
-  border-radius: 50%;
-  transition:1s;
-  cursor: pointer;
+  border-radius   : 50%;
+  transition      : 1s;
+  cursor          : pointer;
 }
 
 .login-header {
-  background: #28d;
-  padding: 20px;
-  font-size: 1.4em;
-  font-weight: normal;
-  text-align: center;
+  background    : #28d;
+  padding       : 20px;
+  font-size     : 1.4em;
+  font-weight   : normal;
+  text-align    : center;
   text-transform: uppercase;
-  color: #fff;
+  color         : #fff;
 }
 
 .login-container {
-  padding: 12px;
-  margin: auto;
+  padding         : 12px;
+  margin          : auto;
   background-color: #fff;
 }
 
@@ -114,21 +114,21 @@ div h3 {
 }
 
 .login input {
-  box-sizing: border-box;
-  width: 100%;
+  box-sizing  : border-box;
+  width       : 100%;
   border-width: 1px;
   border-style: solid;
-  padding: 16px;
-  font-family: inherit;
-  font-size: 0.95em;
-  margin: auto;
+  padding     : 16px;
+  font-family : inherit;
+  font-size   : 0.95em;
+  margin      : auto;
 }
 
 .login input[type="email"],
 .login input[type="password"] {
-  background: #fff;
+  background  : #fff;
   border-color: #bbb;
-  color: #555;
+  color       : #555;
 }
 
 /* Text fields' focus effect */
@@ -138,17 +138,17 @@ div h3 {
 }
 
 .field-icon {
-padding: 2px 20px;
+padding    : 2px 20px;
 margin-left: 85%;
-cursor: pointer;
+cursor     : pointer;
 
 }
 
 .login input[type="submit"] {
-  background: #28d;
+  background  : #28d;
   border-color: transparent;
-  color: #fff;
-  cursor: pointer;
+  color       : #fff;
+  cursor      : pointer;
 }
 
 .login input[type="submit"]:hover {
@@ -161,8 +161,8 @@ cursor: pointer;
 }
 
 .msg_error {
-  color:#ff6d6d;
-  display: flex;
+  color          : #ff6d6d;
+  display        : flex;
   justify-content: center;
 }
 

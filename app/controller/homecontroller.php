@@ -13,11 +13,13 @@ class homeController{
     $user -> setEmail ($_POST['email']);
     $user -> setSenha($_POST['senha']);
     $user -> validateLogin();  
-    
+  
     include "app/view/dashboard.php";    
-  }   
-     
+  }        
     catch(Exception $e){
+      $e->getMessage();
+      var_dump($e);
+      die();
       include "app/view/index.php";    
     }
 }

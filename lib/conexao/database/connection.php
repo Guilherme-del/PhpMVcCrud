@@ -7,17 +7,16 @@
     {
         // atritubo estático que armazena a conexão
         private static $conn;
-
         // função que será chamada por todas as classes que queiram utilizar uma instância do PDO
         public static function getConn()
-        {
+        {                                
             // utiliza self:: ao invés de this-> porque é um atributo estático
-            if(!self::$conn) {
-                self::$conn = new \PDO('mysql: host=localhost; dbname= login', 'root','admin');
-            }
-            return self::$conn;
-        }
+            if(!self::$conn) {     
 
+                self::$conn = new \PDO('mysql: host=localhost:3306; dbname= login', 'root','admin');
+            }       
+            return self:: $conn;
+        }
     }
 
 ?>

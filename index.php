@@ -4,18 +4,18 @@ require_once "lib/conexao/database/connection.php";
 require_once "app/model/user.php";
 
 $pagina = explode( '/', $_SERVER['REQUEST_URI']);
-$ctrl = new homeController();
+$ctrl   = new homeController();
 
 switch($pagina[1]){
-  case "index":
+  case "index": 
   $ctrl->index();
   break;
     
-  case "check":
+  case "check": 
   $ctrl->check();
   break; 
 
-  default:
+  default: 
   $ctrl->index();
   break;
 }
