@@ -1,16 +1,5 @@
 {
-    "name": "dev/phpmvccrud",
+    "name": "php/login",
     "description": "Gerenciador de dependencias",
-    "autoload": {
-        "psr-4": {
-            "Dev\\Phpmvccrud\\": "src/"
-        }
-    },
-    "authors": [
-        {
-            "name": "Guilherme-Del",
-            "email": "guilherme_cavenaghi@hotmail.com"
-        }
-    ],
     "require": {}
 }
