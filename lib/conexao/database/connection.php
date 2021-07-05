@@ -12,7 +12,6 @@
         {                                
             // utiliza self:: ao invés de this-> porque é um atributo estático
             if(!self::$conn) {     
-
                 self::$conn = new \PDO('mysql: host=localhost:3306; dbname= login', 'root','admin');
             }       
             return self:: $conn;
