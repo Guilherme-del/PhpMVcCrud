@@ -5,11 +5,10 @@ use conexao\database\Connection;
 class User 
     {
     private $id;
-    private $nome;
+    public $nome;
     private $email;
     private $senha;
-
-
+    
     public function validateLogin(){
 
         $conn = Connection::getConn();
@@ -19,17 +18,16 @@ class User
         $stmt = $conn->prepare($sql);
         $stmt->bindValue(':email', $this->email);
         $stmt->execute();
-
+        
         if ($stmt->rowCount())
-        {   
-           
+        {             
             $result = $stmt->fetch();
-       
+          
             if ($result['senha'] === $this->senha) {
                 $_SESSION['usr'] = array(                   
                     'id_user'   => $result['id'],
-                    'name_user' => $result['name']
-                );
+                    'name_user' => $result['nome']
+                );               
                 return true;
             }
         }     

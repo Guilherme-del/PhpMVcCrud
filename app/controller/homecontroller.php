@@ -3,6 +3,7 @@
 require "app/model/user.php";
 
 
+
 class homeController{
   public function index(){
     include "app/view/index.php";}
@@ -14,12 +15,10 @@ class homeController{
     $user -> setSenha($_POST['senha']);
     $user -> validateLogin();  
 
-    var_dump($user);
-    die(); 
     include "app/view/dashboard.php";    
   }        
     catch(Exception $e){
-      include "app/view/index.php";    
+      include "app/view/index.php";
     }
  }
 }

