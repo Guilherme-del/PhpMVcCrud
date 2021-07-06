@@ -7,8 +7,10 @@
     <title>Entre ou Cadastre-se</title>
     <link rel = "shortcut icon" href = "https://www.novaconcursos.com.br/portal/wp-content/uploads/2020/01/facebook-logo-redondo.png" type = "image/x-icon">
     <link rel = "stylesheet" href    = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel = "stylesheet" href    = "/assets/css/main.css">
 </head>
+
 <body>
 <div id    = "div1">
 <div class = "slider">
@@ -33,17 +35,15 @@
     <p><input type = "submit" value = "Entrar"></p>
 
     <span class = "msg_error"><i class = "fa fa-exclamation-triangle"></i>Tentativa Inválida </span>
-
-
-
-
     </form>
-    <form method = "POST"  onclick = 'exibeDiv()' class = "login-container">
 
-    <p><hr><input style = "display:flex;justify-content: center;background-color:#42b72a;margin:10px;margin:10px 19px; width: 88%" type = "submit" value = "Cadastre-se"></p>
+    <form method = "POST" action         = "/abrecad"   onclick = 'exibeDiv()' class = "login-container">
+
+    <p><hr><input style = "display:flex;justify-content: center; cursor: pointer;background-color:#42b72a;margin:10px;margin:10px 19px; width: 83%; color:#fff" type = "button" value = "Cadastre-se"></p>
     </form>
 </div>
 </div>
+
 
 
 
@@ -52,7 +52,7 @@
 <a   class = "links" id = "paracadastro"></a>
 <a   class = "links" id = "paralogin"></a>
 <div class = "content">
-      <!--FORMULÁRIO DE LOGIN-->
+<i   onclick = 'closeDiv()' class="fa-close"></i>
       <div  id     = "login">
       <form method = "post" action = "">
           <h1>Login</h1> 
@@ -79,22 +79,22 @@
       </div>
       <!--FORMULÁRIO DE CADASTRO-->
       <div  id     = "cadastro">
-      <form method = "post" action = "">
+      <form method = "post" action = "/cadastro">
           <h1>Cadastro</h1>          
           <p> 
             <label for = "nome_cad">Seu nome</label>
-            <input id  = "nome_cad" name = "nome_cad" required = "required" type = "text" placeholder = "Guilherme Cavenaghi" />
+            <input id  = "nome_cad" name = "nome_cad" required = "required" type = "text" placeholder = "ex:Guilherme Cavenaghi" />
           </p>          
           <p> 
             <label for = "email_cad">Seu e-mail</label>
-            <input id  = "email_cad" name = "email_cad" required = "required" type = "email" placeholder = "contato@htmlecsspro.com"/>
+            <input id  = "email_cad" name = "email_cad" required = "required" type = "email" placeholder = "ex:contato@htmlecsspro.com"/>
           </p>          
           <p> 
             <label for = "senha_cad">Sua senha</label>
-            <input id  = "senha_cad" name = "senha_cad" required = "required" type = "password" placeholder = "1234"/>
+            <input id  = "senha_cad" name = "senha_cad" required = "required" type = "password" placeholder = "ex:1234"/>
           </p>          
           <p> 
-            <input type = "submit" value = "Cadastrar"/>
+            <input method ="POST" action = "/cadastro" style = " cursor: pointer;background-color:#42b72a; color:#fff"   type = "submit" value = "Cadastrar"/>
           </p>          
           </p>
         </form>
