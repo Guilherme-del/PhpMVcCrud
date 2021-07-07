@@ -33,7 +33,7 @@
     </p>
     <p><input type = "submit" value = "Entrar"></p>
 
-    <span class = "msg_error"><i class = "fa fa-exclamation-triangle"></i>Tentativa Inválida </span>
+    <span class = "msg_error"><?php echo $e ?></span>
     </form>
 
     <form method = "POST" action         = "/abrecad"   onclick = 'exibeDiv()' class = "login-container">
@@ -42,7 +42,6 @@
     </form>
 </div>
 </div>
-
 
 <!--Cadastro de pessoas-->
 <div class = "containercad" >

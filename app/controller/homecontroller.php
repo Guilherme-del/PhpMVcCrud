@@ -10,13 +10,14 @@ class homeController{
     try{
     $user = new User;
     $user -> setEmail($_POST['email']);
-    $user -> setSenha($_POST['senha']);
+    $user -> setSenha($_POST['senha']);   
     $user -> validateLogin(); 
 
-    $user -> getNome();
+    
     include "app/view/dashboard.php";    
   }        
     catch(Exception $e){
+      $e = 'Login inválido, Cadastre-se';
       include "app/view/index.php";
     }
  }
