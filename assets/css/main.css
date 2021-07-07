@@ -168,30 +168,18 @@ cursor     : pointer;
   justify-content: center;
 }
 
-
-
-
-
-
-
-
-
-
-
-
 .containercad {
   display: none;
   position: absolute;
-  margin-top: 7%;
+  margin-top: 5.9%;
   z-index: 2;
 }
 
 .content i {
   position: absolute;
   margin-left: 85%;
-  margin-top: 1px;
   cursor: pointer;
-  background-color: #fff;
+  color: #ff6d6d;
   z-index: 2;
 }
 
@@ -206,21 +194,21 @@ a.links{
 
 /* content que contem os formulários */
 .content{
-  width: 500px;
+  width: 80%;
   margin: 0px auto;
   position: relative;	
 }
 
 /* formatando o cabeçalho dos formulários */
 h1{
-  font-size: 48px;
-  color: #066a75;
-  padding: 10px 0;
-  font-family: Arial,sans-serif;
+  font-size: 40px;
+  color: var(--azul);
   font-weight: bold;
   text-align: center;
+  padding: 10px 0;
   padding-bottom: 30px;
 }
+
 h1:after{
   content: ' ';
   display: block;
@@ -238,7 +226,7 @@ p:first-child{
   margin: 0px;
 }
 label{
-  color: #405c60;
+  color: var(--preta);
   position: relative;
 }
 
@@ -317,7 +305,7 @@ input:not([type="checkbox"]){
   width: 88%;	
   padding: 18px 6% 60px 6%;
   margin: 0 0 35px 0;
-  background: rgb(247, 247, 247);
+  background-color:#fff; 
   border: 1px solid rgba(147, 184, 189,0.8);
   
   box-shadow: 5px;

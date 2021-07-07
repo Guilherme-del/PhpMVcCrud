@@ -20,7 +20,6 @@
   <div class = "slide"><img src = "/imgs/Facebook3.png"> </div>
 </div>
 </div>
-
 <div id    = "div2">
 <div class = "login">
 <div class = "login-triangle"></div>
@@ -39,46 +38,19 @@
 
     <form method = "POST" action         = "/abrecad"   onclick = 'exibeDiv()' class = "login-container">
 
-    <p><hr><input style = "display:flex;justify-content: center; cursor: pointer;background-color:#42b72a;margin:10px;margin:10px 19px; width: 83%; color:#fff" type = "button" value = "Cadastre-se"></p>
+    <p><hr><input style = "display:flex;justify-content: center; cursor: pointer;background-color:#42b72a;margin:10px 20px; width: 82.8%; color:#fff" type = "button" value = "Cadastre-se"></p>
     </form>
 </div>
 </div>
 
 
-
-
 <!--Cadastro de pessoas-->
 <div class = "containercad" >
 <a   class = "links" id = "paracadastro"></a>
-<a   class = "links" id = "paralogin"></a>
 <div class = "content">
-<i   onclick = 'closeDiv()' class="fa-close"></i>
-      <div  id     = "login">
-      <form method = "post" action = "">
-          <h1>Login</h1> 
-          <p> 
-            <label for = "email_login">Seu e-mail</label>
-            <input id  = "email_login" name = "email_login" required = "required" type = "text" placeholder = "contato@htmlecsspro.com"/>
-          </p>         
-          <p> 
-            <label for = "senha_login">Sua senha</label>
-            <input id  = "senha_login" name = "senha_login" required = "required" type = "password" placeholder = "1234" />
-          </p>         
-          <p> 
-            <input type = "checkbox" name = "manterlogado" id = "manterlogado" value = "" />
-            <label for  = "manterlogado">Manter-me logado</label>
-          </p>      
-          <p> 
-            <input type = "submit" value = "Logar" />
-          </p>         
-          <p class = "link">
-            Ainda não tem conta?
-            <a href = "#paracadastro">Cadastre-se</a>
-          </p>
-        </form>
-      </div>
       <!--FORMULÁRIO DE CADASTRO-->
       <div  id     = "cadastro">
+      <i   onclick = 'closeDiv()' class="fa fa-close"></i>
       <form method = "post" action = "/cadastro">
           <h1>Cadastro</h1>          
           <p> 
@@ -87,14 +59,14 @@
           </p>          
           <p> 
             <label for = "email_cad">Seu e-mail</label>
-            <input id  = "email_cad" name = "email_cad" required = "required" type = "email" placeholder = "ex:contato@htmlecsspro.com"/>
+            <input id  = "email_cad" name = "email_cad" required = "required" type = "email" placeholder = "ex:contato@teste.com"/>
           </p>          
           <p> 
             <label for = "senha_cad">Sua senha</label>
             <input id  = "senha_cad" name = "senha_cad" required = "required" type = "password" placeholder = "ex:1234"/>
           </p>          
           <p> 
-            <input method ="POST" action = "/cadastro" style = " cursor: pointer;background-color:#42b72a; color:#fff"   type = "submit" value = "Cadastrar"/>
+            <input method ="POST" action = "/cadastro" style = " font-size:20px;cursor: pointer;background-color:#42b72a; color:#fff"   type = "submit" value = "Cadastrar"/>
           </p>          
           </p>
         </form>

@@ -2,8 +2,6 @@
 
 require "app/model/user.php";
 
-
-
 class homeController{
   public function index(){
     include "app/view/index.php";}
