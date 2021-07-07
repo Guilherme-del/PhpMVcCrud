@@ -37,15 +37,13 @@ class User
     public function criauser(){
         $conn = Connection::getConn();
              
-        $sql = 'INSERT INTO usuarios (nome,email,senha) values (:nome,:email:senha)'; // ':' impede invasões do tipo sqlinjection (um pouco de segurança a mais para o site)
+        $sql = 'INSERT INTO usuarios (nome,email,senha) values (:nome,:email,:senha)';
+         // ':' impede invasões do tipo sqlinjection (um pouco de segurança a mais para o site)
                 
         $stmt = $conn->prepare($sql);
-        $stmt->bindValue(':nome', $this->nome);  
-        $stmt->bindValue(':email', $this->email);
-        $stmt->bindValue(':senha', $this->senha);
-
-        var_dump($teste);
-        die();
+        $stmt->bindParam(':nome', $this->nome);  
+        $stmt->bindParam(':email', $this->email);
+        $stmt->bindParam(':senha', $this->senha);
 
         $stmt->execute(); 
         
@@ -54,8 +52,6 @@ class User
         }else{
             echo "Não Cadastrou";
         }
-
-
     }
 
     public function setEmail ($email){

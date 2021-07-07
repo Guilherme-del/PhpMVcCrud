@@ -11,10 +11,15 @@
         public static function getConn()
         {                                
             // utiliza self:: ao invés de this-> porque é um atributo estático
+            try{
             if(!self::$conn) {     
                 self::$conn = new \PDO("mysql: host=localhost:3306; dbname=login", 'root','admin');
             }       
             return self:: $conn;
+        }
+        catch (Exception $e){
+            echo 'Não foi possivel se conectar com o banco de dados';
+        }
         }
     }
 
