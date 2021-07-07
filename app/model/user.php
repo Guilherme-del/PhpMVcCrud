@@ -34,6 +34,28 @@ class User
         throw new \Exception('Login inválido');
     }
 
+    public function validateuser(){
+        $conn = Connection::getConn();
+
+        $sql = 'SELECT * FROM usuarios WHERE email = :email'; // :email impede invasões do tipo sqlinjection (um pouco de segurança a mais para o site)
+                   
+        $stmt = $conn->prepare($sql);
+        $stmt->bindValue(':email', $this->email);
+
+        $stmt->execute();
+        
+        if ($stmt->rowCount())
+        {                        
+            $result = $stmt->fetch();
+
+            if ($this->email === null) {
+                return true;               
+            }
+            else{
+                throw new \Exception('Login usuario não consta em nossa base de dados');}
+        }            
+    }
+
     public function criauser(){
         $conn = Connection::getConn();
              

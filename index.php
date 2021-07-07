@@ -1,7 +1,7 @@
 <?php
 require "app/controller/homeController.php";
-require_once "lib/conexao/database/connection.php";
 require_once "app/model/user.php";
+require_once "lib/conexao/database/connection.php";
 
 $pagina = explode( '/', $_SERVER['REQUEST_URI']);
 $ctrl   = new homeController();

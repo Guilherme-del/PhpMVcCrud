@@ -15,8 +15,7 @@
     <body>
         <header>
             <div class="content_area">
-                Bem vindo,
-               
+                Bem vindo,               
                 <a href="/index">Sair</a>
                 <a>Excluir conta</a>
                 
