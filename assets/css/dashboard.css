@@ -1,0 +1,57 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@keyframes fadeInSlide{
+    from  {opacity: 0;}
+    to    {opacity: 1;}
+}
+
+:root {
+  /* define variáveis no css */
+  --azul : #1E90FF;
+  --preta: #1d1c1c;
+}  
+
+*{ margin: 0;padding: 0;box-sizing: border-box; /* limita os elementos na borda da caixa*/font-family: 'Roboto', sans-serif;}
+
+header {
+    background-color:var(--azul);
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    color: #F3EFE0;
+    font-family: 'Arial'
+}
+
+header h1 {
+    font-size: 15px;
+}
+
+header a {
+padding-right: 10px;
+cursor: pointer;
+}
+
+.content_area {
+    width: 1100px;
+    margin: 0 auto;
+}
+
+.content_area a {
+    text-align: right;
+    float: right;
+    text-decoration: none;
+    color: #F3EFE0;
+}
+
+.content_area a:hover {
+    text-decoration: underline;
+    color: #ff6d6d;
+}
+
+h1 {
+    color: #CCC;
+    font-size: 60px;
+    margin: 200px auto;
+    text-align: center;
+    font-family: Arial;
+}
