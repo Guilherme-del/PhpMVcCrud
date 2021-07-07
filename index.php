@@ -15,6 +15,10 @@ switch($pagina[1]){
   $ctrl->check();
   break; 
 
+  case "cadastro": 
+  $ctrl->cadastro();
+  break; 
+
   default: 
   $ctrl->index();
   break;

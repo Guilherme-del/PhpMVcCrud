@@ -8,6 +8,6 @@
     <link rel = "shortcut icon" href = "https://www.novaconcursos.com.br/portal/wp-content/uploads/2020/01/facebook-logo-redondo.png" type = "image/x-icon">
 </head>
 <body>
-<h2>Seja bem vindo,<?php echo $nome;?></h2>  
+<h2>Seja bem vindo,<?php echo $this -> nome;?></h2>  
 </body>
 </html>
