@@ -36,9 +36,8 @@
     <span class = "msg_error"><?php echo $e ?></span>
     </form>
 
-    <form method = "POST" action         = "/abrecad"   onclick = 'exibeDiv()' class = "login-container">
-
-    <p><hr><input style = "display:flex;justify-content: center; cursor: pointer;background-color:#42b72a;margin:10px 20px; width: 82.8%; color:#fff" type = "button" value = "Cadastre-se"></p>
+    <form method = "POST" action         = "/abrecad" class = "login-container">
+    <p><hr><input style = "display:flex;justify-content: center; cursor: pointer;background-color:#42b72a;margin:10px 20px; width: 82.8%; color:#fff" type = "button" value = "Cadastre-se" onclick = 'exibeDiv()'></p>
     </form>
 </div>
 </div>
@@ -68,7 +67,7 @@
             <span class = "msg_error"><?php echo $e ?></span>
             
             <input method ="POST" action = "/cadastro" style = " font-size:20px;cursor: pointer;background-color:#42b72a; color:#fff"  type = "submit" value = "Cadastrar"/>
-            
+
           </p>          
           </p>
         </form>

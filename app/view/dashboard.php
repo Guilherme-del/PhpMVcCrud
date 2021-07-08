@@ -16,16 +16,37 @@
         <header>
             <div class="content_area">
                 Bem vindo,               
-                <a href="/index">Sair</a>
-                <a>Excluir conta</a>
+                <a  href="/index">Sair</a>
+                <a class="botao" onclick = 'aviso()'>Excluir conta</a>
                 
             </div>            
         </header>
         <section class="box_dashboard">
             <div class="content_area">
-                <h1>DASHBOARD</h1>                
+                <p>DASHBOARD</p>                
             </div>
         </section>
 
-    </body>
+<section id="aviso" class="quadro_geral">
+  <div class="quadro_de_aviso">
+
+    <div class="aviso_titulo">
+      <p>AVISO</p>
+
+      <a class="aviso_fechar" onclick = 'avisofechar()'>x</a>
+    </div>
+    
+    <div class="aviso_corpo"> 
+      <p>Clicando no botão abaixo excluira permanentemente sua conta de nossos registros.Você pode excluir sua Conta do FacebookClone a qualquer momento. Se mudar de ideia, talvez não seja possível recuperá-la.Observação: se você usa uma conta do trabalho, da escola ou de outro grupo, entre em contato com seu administrador para excluí-la.Para remover uma conta do seu dispositivo sem excluí-la, siga as instruções abaixo. Se você não vir seu dispositivo, visite o site de suporte do fabricante.</p>
+      <p style = "font-weight : bolder">Att, Guilherme Cavenaghi.<hr></p>
+
+      <form method = "POST" action         = "/excluir" class = "exclui_container">
+    <p><input type = "submit" value = "Estou ciente"></p>
+    </form>
+    </div>
+  </div>
+</section>
+</body>
 </html>
+
+<script src = "/assets/js/opencad.js"></script>

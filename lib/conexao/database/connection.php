@@ -18,7 +18,7 @@
             return self:: $conn;
         }
         catch (Exception $e){
-            echo 'Não foi possivel se conectar com o banco de dados';
+            echo 'Não foi possivel se conectar ao banco de dados';
         }
         }
     }

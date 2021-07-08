@@ -42,8 +42,8 @@ class User
         $stmt = $conn->prepare($sql);
         $stmt->bindValue(':email', $this->email);
 
-        $stmt->execute();
-        
+        $stmt->execute();      
+
         if ($stmt->rowCount())
         {                        
             $result = $stmt->fetch();
@@ -77,6 +77,25 @@ class User
         }
     }
 
+    public function excluiuser(){
+        $conn = Connection::getConn();
+             
+        $sql = 'DELETE FROM  usuarios WHERE id = :id';
+         // ':' impede invasões do tipo sqlinjection (um pouco de segurança a mais para o site)
+                
+        $stmt = $conn->prepare($sql);
+        $stmt->bindParam(':id', $this->id);  
+
+
+        $stmt->execute(); 
+        
+        if($stmt->rowCount()>0){
+            return true;
+        }else{
+            echo "Não excluiu";
+        }
+    }
+
     public function setEmail ($email){
         $this -> email = $email;
     }
@@ -89,11 +108,34 @@ class User
         $this -> senha = $senha;
     }
 
+    public function getid (){
+        $conn = Connection::getConn();
+        $sql = 'SELECT * FROM usuarios WHERE email = :email';
+
+        $stmt = $conn->prepare($sql);
+        $stmt->bindValue(':email', $this->email);
+        
+        var_dump($this->email);
+        die();
+
+        $stmt->execute();
+
+        if ($stmt->rowCount()){
+        $result = $stmt->fetch();  
+        }
+
+        var_dump($result['id']);
+        die();
+
+        return $this -> id;
+    }
+
     public function getNome (){
         return $this -> nome;
     }
 
     public function getEmail (){
+
         return $this -> email;
     }
 

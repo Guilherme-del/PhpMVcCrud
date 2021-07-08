@@ -28,7 +28,6 @@ class homeController{
     $user -> setEmail($_POST['email_cad']);
     $user -> setSenha($_POST['senha_cad']);
     $user -> validateuser();
-
     $user -> criauser();
      
     include "app/view/dashboard.php"; 
@@ -39,4 +38,20 @@ class homeController{
   }
  }
 
+ public function exclui () {
+  try{
+  
+  $user -> setEmail($_POST['email']);
+
+  $user -> getid();
+  $user -> excluiuser();
+  include "app/view/index.php";
+}
+  catch (Exception $e){
+    $e->getMessage();
+    var_dump($variavel);
+    die();
+  }
+  
+ }
 }
