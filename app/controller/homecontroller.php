@@ -28,12 +28,15 @@ class homeController{
     $user -> setEmail($_POST['email_cad']);
     $user -> setSenha($_POST['senha_cad']);
     $user -> validateuser();
+
     $user -> criauser();
      
     include "app/view/dashboard.php"; 
   }
   catch(Exception $e){
     $e = 'usuario ja consta em nossa base de cadastro';
+    include "app/view/index.php";
   }
  }
+
 }

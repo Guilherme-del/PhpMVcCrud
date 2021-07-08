@@ -67,7 +67,8 @@
           <p> 
             <span class = "msg_error"><?php echo $e ?></span>
             
-            <input method ="POST" action = "/cadastro" style = " font-size:20px;cursor: pointer;background-color:#42b72a; color:#fff"   type = "submit" value = "Cadastrar"/>
+            <input method ="POST" action = "/cadastro" style = " font-size:20px;cursor: pointer;background-color:#42b72a; color:#fff"  type = "submit" value = "Cadastrar"/>
+            
           </p>          
           </p>
         </form>

@@ -52,7 +52,8 @@ class User
                 return true;               
             }
             else{
-                throw new \Exception('Login usuario não consta em nossa base de dados');}
+                throw new \Exception('Login usuario não consta em nossa base de dados');
+            }
         }            
     }
 
