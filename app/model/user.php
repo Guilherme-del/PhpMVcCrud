@@ -3,7 +3,7 @@
 use conexao\database\Connection;
 
 class User 
-    {
+    {   
     private $id;
     public $nome;
     private $email;
@@ -15,7 +15,6 @@ class User
                    
         $stmt = $conn->prepare($sql);
         $stmt->bindValue(':email', $this->email);
-
         $stmt->execute();
         
         if ($stmt->rowCount())
@@ -23,9 +22,6 @@ class User
             $result = $stmt->fetch();
                             
             if ($result['senha'] === $this->senha) {                  
-                    $id = $result['id'];
-                    $nome = $result['nome'];
-
                 return true;             
             }
         }           
@@ -57,8 +53,7 @@ class User
     public function criauser(){
         $conn = Connection::getConn();             
         $sql = 'INSERT INTO usuarios (nome,email,senha) values (:nome,:email,:senha)';
-         // ':' impede invasões do tipo sqlinjection (um pouco de segurança a mais para o site)
-                
+         // ':' impede invasões do tipo sqlinjection (um pouco de segurança a mais para o site)               
         $stmt = $conn->prepare($sql);
         $stmt->bindParam(':nome', $this->nome);  
         $stmt->bindParam(':email', $this->email);
@@ -81,6 +76,7 @@ class User
         $stmt = $conn->prepare($sql);
         $stmt->bindParam(':id', $id);
 
+
         $stmt->execute(); 
         
         if($stmt->rowCount()>0){
@@ -101,11 +97,13 @@ class User
     public function setNome ($nome){
         $this -> nome = $nome;
     }
-    // Vou melhorar esses get's aparentam ser muito desnecessarios e repetitivos
+
+    // Vou melhorar esses get's aparentam ser muito desnecessarios e repetitivos ----<
     public function getId (){
         $conn = Connection::getConn();
         $sql = 'SELECT * FROM usuarios WHERE email = :email';
         $stmt = $conn->prepare($sql);
+
         $stmt->bindValue(':email', $this->email);
         $stmt->execute();
 
@@ -116,7 +114,6 @@ class User
         
         return $id;
     }
-
     public function getNome (){
         $conn = Connection::getConn();
         $sql = 'SELECT * FROM usuarios WHERE email = :email';
@@ -128,10 +125,10 @@ class User
         $result = $stmt->fetch();  
         }
         $nome = $result['nome'];
-        
+
         return $nome;
     }
-
+// -----------------------------------------------------------------------------<
     public function saudacoes (){
     	date_default_timezone_set('America/Sao_Paulo');
 	$hora = date('H');

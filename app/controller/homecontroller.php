@@ -43,7 +43,6 @@ class homeController{
  public function exclui () {
   try{  
   $user = new User;
-  $user -> setEmail($_POST['email_cad']);
   $id = $user -> getId();
   $user -> excluiuser();
 
