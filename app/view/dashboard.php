@@ -14,11 +14,10 @@
 </html>
     <body>
         <header>
-            <div class="content_area">
-                Bem vindo,               
+            <div class="content_area">                
+          <?php echo $saudandoamandioca; echo $nome ?>
                 <a  href="/index">Sair</a>
                 <a class="botao" onclick = 'aviso()'>Excluir conta</a>
-                
             </div>            
         </header>
         <section class="box_dashboard">

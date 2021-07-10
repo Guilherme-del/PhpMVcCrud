@@ -10,13 +10,14 @@ class homeController{
     try{
     $user = new User;
     $user -> setEmail($_POST['email']);
-    $user -> setSenha($_POST['senha']);   
-    $user -> validateLogin(); 
-    
+    $user -> setSenha($_POST['senha']);
+    $nome = $user -> getNome();
+    $user -> validateLogin();
+    $saudandoamandioca = $user -> saudacoes();  
     include "app/view/dashboard.php";    
   }        
     catch(Exception $e){
-      $e = 'Login inválido, Cadastre-se';
+      $e = 'Login inválido, cadastre-se';
       include "app/view/index.php";
     }
  }
@@ -29,29 +30,30 @@ class homeController{
     $user -> setSenha($_POST['senha_cad']);
     $user -> validateuser();
     $user -> criauser();
-     
+    $saudandoamandioca = $user -> saudacoes();
+    $nome = $user -> getNome();      
     include "app/view/dashboard.php"; 
   }
   catch(Exception $e){
-    $e = 'usuario ja consta em nossa base de cadastro';
+    $e = 'email já consta em nossa base de cadastro';
     include "app/view/index.php";
   }
  }
 
  public function exclui () {
-  try{
-  
-  $user -> setEmail($_POST['email']);
-
-  $user -> getid();
+  try{  
+  $user = new User;
+  $user -> setEmail($_POST['email_cad']);
+  $id = $user -> getId();
   $user -> excluiuser();
+
   include "app/view/index.php";
 }
   catch (Exception $e){
+    
     $e->getMessage();
-    var_dump($variavel);
+    var_dump($e);
     die();
-  }
-  
+  } 
  }
 }
