@@ -16,20 +16,22 @@ class User
         $stmt = $conn->prepare($sql);
         $stmt->bindValue(':email', $this->email);
         $stmt->execute();
-        
-        if ($stmt->rowCount())
-        {             
-            $result = $stmt->fetch();
-                            
-            if ($result['password'] === $this->password) {
+
+
+        if ($stmt->rowCount() && $this->senha <> null)
+        {         
+            $result = $stmt->fetch(); 
+
+            if ($result['senha'] === $this->senha) {
                 $_SESSION['usuarioID'] = $result['id']; 
                 $_SESSION['usuarioNome'] = $result['nome'];
                 $_SESSION['usuarioMail'] = $result['email'];
-                $_SESSION['usuarioSenha'] = $result['senha'];               
+                $_SESSION['usuarioSenha'] = $result['senha'];            
                 return $result;
-        }       
-        throw new \Exception('Login inválido');
+        }  
     }
+    else {
+        throw new \Exception('Login inválido');}
 }
     public function validateuser(){
         $conn = Connection::getConn();

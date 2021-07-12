@@ -16,7 +16,8 @@ class homeController{
     $email = $user -> getEmail();
     $senha = $user -> getSenha();
     $id = $user -> getId(); 
-    $saudandoamandioca = $user -> saudacoes();  
+    $saudandoamandioca = $user -> saudacoes();
+
     include "app/view/dashboard.php";    
   }        
     catch(Exception $e){
@@ -53,13 +54,12 @@ class homeController{
   $user -> excluiuser();
 
   include "app/view/index.php";
-  echo  "<script>alert('Usuário excluido');</script>";
+  echo  "<script>alert('Espero te ver novamente ;-;');</script>";
 
 }
   catch (Exception $e){
-    
-    $e = 'Conta recentemente criada , saia e logue novamente';
-    include "app/view/dashboard.php"; 
+    $e = 'Impossível excluir conta recentemente criada, Logue com a conta e a possibilidade se habilitará';
+    include "app/view/index.php"; 
   } 
  }
 }
