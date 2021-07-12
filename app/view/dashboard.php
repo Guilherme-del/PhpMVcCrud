@@ -22,7 +22,7 @@
         </header>
         <section class = "box_dashboard">
         <div     class = "content_area">
-          <h1>Informações do email: <p name = "dashEmail"><?php echo $email ?></p></h1>
+          <h1>Informações do email: <p name = "email"><?php echo $email ?></p></h1>
   <table>
   <tr>
     <th>Nome</th>   

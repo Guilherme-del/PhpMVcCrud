@@ -47,6 +47,22 @@ class homeController{
   }
  }
 
+ public function alteracao () {
+  try{  
+  $user = new User;
+  $user -> setId($_POST['Dashid']);
+  $user -> alterauser();
+
+  include "app/view/dashboard.php";
+
+}
+  catch (Exception $e){
+    $e = 'Impossível excluir conta recentemente criada, Logue com a conta e a possibilidade se habilitará';
+    include "app/view/index.php"; 
+  } 
+ }
+
+
  public function exclui () {
   try{  
   $user = new User;
@@ -54,7 +70,7 @@ class homeController{
   $user -> excluiuser();
 
   include "app/view/index.php";
-  echo  "<script>alert('Espero te ver novamente ;-;');</script>";
+  echo  "<script>alert('Espero te ver novamente!');</script>";
 
 }
   catch (Exception $e){

@@ -19,6 +19,10 @@ switch($pagina[1]){
   $ctrl->cadastro();
   break; 
 
+  case "alteracao": 
+  $ctrl->alteracao();
+  break;
+
   case "excluir": 
   $ctrl->exclui();
   break; 
