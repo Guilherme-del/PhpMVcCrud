@@ -57,7 +57,7 @@ class homeController{
 
 }
   catch (Exception $e){
-    $e = 'Impossível excluir conta recentemente criada, Logue com a conta e a possibilidade se habilitará';
+    $e = 'Impossível alterar dado de conta recentemente criada, Logue com a conta e a possibilidade se habilitará';
     include "app/view/index.php"; 
   } 
  }
