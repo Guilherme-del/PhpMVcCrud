@@ -34,6 +34,7 @@ cursor: pointer;
 .content_area {
     width: 1100px;
     margin: 0 auto;
+    cursor: default;
 }
 
 .content_area a {
@@ -46,15 +47,43 @@ cursor: pointer;
 .content_area a:hover {
     text-decoration: underline;
     color: #ff6d6d;
+    text-decoration: none;
 }
 
 .box_dashboard p {
     color: #CCC;
     font-size: 60px;
-    margin: 100px auto;
-    text-align: center;
+    text-align: left;
     font-family: Arial;
 }
+
+table, td, th {    
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 20px 0px ;
+}
+
+table input[type="submit"] {  background  : #28d;
+  border-color: transparent;
+  color       : #fff;
+  cursor      : pointer; 
+  padding: 8px;
+}
+
+table input[type="submit"]:hover {  background: #17c;}
+
+th, td {
+  padding: 15px 5px;
+}
+
+.box_dashboard h1 {margin-top: 20px;}
+
+tr:nth-child(even){background-color: #f2f2f2}
 
   /* inclui toda a área de aviso, titulo e corpo */
   .quadro_de_aviso {

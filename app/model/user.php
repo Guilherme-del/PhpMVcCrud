@@ -21,13 +21,16 @@ class User
         {             
             $result = $stmt->fetch();
                             
-            if ($result['senha'] === $this->senha) {                  
-                return true;             
-            }
-        }           
+            if ($result['password'] === $this->password) {
+                $_SESSION['usuarioID'] = $result['id']; 
+                $_SESSION['usuarioNome'] = $result['nome'];
+                $_SESSION['usuarioMail'] = $result['email'];
+                $_SESSION['usuarioSenha'] = $result['senha'];               
+                return $result;
+        }       
         throw new \Exception('Login inválido');
     }
-
+}
     public function validateuser(){
         $conn = Connection::getConn();
         $sql = 'SELECT * FROM usuarios WHERE email = :email'; // :email impede invasões do tipo sqlinjection (um pouco de segurança a mais para o site)
@@ -58,7 +61,6 @@ class User
         $stmt->bindParam(':nome', $this->nome);  
         $stmt->bindParam(':email', $this->email);
         $stmt->bindParam(':senha', $this->senha);
-
         $stmt->execute(); 
                
         if($stmt->rowCount()>0){
@@ -72,9 +74,8 @@ class User
         $conn = Connection::getConn();             
         $sql = 'DELETE FROM  usuarios WHERE id = :id';
          // ':' impede invasões do tipo sqlinjection (um pouco de segurança a mais para o site)
-                
         $stmt = $conn->prepare($sql);
-        $stmt->bindParam(':id', $id);
+        $stmt->bindParam(':id', $this -> id);
 
 
         $stmt->execute(); 
@@ -86,8 +87,12 @@ class User
         }
     }
 
+    public function setId ($id){
+        $this -> id = $id;
+    }
+
     public function setEmail ($email){
-        $this -> email = $email;
+        $this -> email = $email;  
     }
 
     public function setSenha ($senha){
@@ -104,7 +109,8 @@ class User
         $sql = 'SELECT * FROM usuarios WHERE email = :email';
         $stmt = $conn->prepare($sql);
 
-        $stmt->bindValue(':email', $this->email);
+        $stmt->bindValue(':email',$this->email );
+
         $stmt->execute();
 
         if ($stmt->rowCount()){
@@ -127,6 +133,34 @@ class User
         $nome = $result['nome'];
 
         return $nome;
+    }
+    public function getEmail (){
+        $conn = Connection::getConn();
+        $sql = 'SELECT * FROM usuarios WHERE email = :email';
+        $stmt = $conn->prepare($sql);
+        $stmt->bindValue(':email', $this->email);
+        $stmt->execute();
+
+        if ($stmt->rowCount()){
+        $result = $stmt->fetch();  
+        }
+        $email = $result['email'];
+
+        return $email;
+    }
+    public function getSenha (){
+        $conn = Connection::getConn();
+        $sql = 'SELECT * FROM usuarios WHERE email = :email';
+        $stmt = $conn->prepare($sql);
+        $stmt->bindValue(':email', $this->email);
+        $stmt->execute();
+
+        if ($stmt->rowCount()){
+        $result = $stmt->fetch();  
+        }
+        $senha = $result['senha'];
+
+        return $senha;
     }
 // -----------------------------------------------------------------------------<
     public function saudacoes (){

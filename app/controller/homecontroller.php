@@ -11,8 +11,11 @@ class homeController{
     $user = new User;
     $user -> setEmail($_POST['email']);
     $user -> setSenha($_POST['senha']);
-    $nome = $user -> getNome();
     $user -> validateLogin();
+    $nome = $user -> getNome();
+    $email = $user -> getEmail();
+    $senha = $user -> getSenha();
+    $id = $user -> getId(); 
     $saudandoamandioca = $user -> saudacoes();  
     include "app/view/dashboard.php";    
   }        
@@ -31,7 +34,10 @@ class homeController{
     $user -> validateuser();
     $user -> criauser();
     $saudandoamandioca = $user -> saudacoes();
-    $nome = $user -> getNome();      
+    $nome = $user -> getNome();
+    $email = $user -> getEmail();
+    $senha = $user -> getSenha();
+    $senha = $user -> getId();      
     include "app/view/dashboard.php"; 
   }
   catch(Exception $e){
@@ -43,16 +49,17 @@ class homeController{
  public function exclui () {
   try{  
   $user = new User;
-  $id = $user -> getId();
+  $user -> setId($_POST['Dashid']);
   $user -> excluiuser();
 
   include "app/view/index.php";
+  echo  "<script>alert('Usuário excluido');</script>";
+
 }
   catch (Exception $e){
     
-    $e->getMessage();
-    var_dump($e);
-    die();
+    $e = 'Conta recentemente criada , saia e logue novamente';
+    include "app/view/dashboard.php"; 
   } 
  }
 }

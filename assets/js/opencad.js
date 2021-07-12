@@ -35,12 +35,11 @@ function aviso () {
   }
   var elems = document.getElementsByClassName('content_area');
   for (var i=0;i<elems.length;i+=1){
-    elems[i].style.backgroud = 'black'; 
-    elems[i].style.opacity = '0.2';  
+    elems[i].style.opacity = '0.1';  
   }
   var elems = document.getElementsByClassName('box_dashboard');
   for (var i=0;i<elems.length;i+=1){
-    elems[i].style.opacity = '0.2';  
+    elems[i].style.opacity = '0.1';  
   }
   }
 
