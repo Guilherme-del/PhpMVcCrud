@@ -1,2 +1,2 @@
-# PhpMVcCrud
-Melhorando o php com uma tela de login e cadastro de cliente
+# Homologação
+branch dev para fase de desenvolvimento(usando mais o git e github para aprendizado forma correta)

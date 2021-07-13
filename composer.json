@@ -1,0 +1,5 @@
+{
+    "name": "php/login",
+    "description": "Gerenciador de dependencias",
+    "require": {}
+}
