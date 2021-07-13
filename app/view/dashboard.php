@@ -26,22 +26,30 @@
   <table>
   <tr>
     <th>Nome</th>   
-    <td><?php echo $nome ?></td>
-    <td><input type = "submit" value = "Alterar"></td>
+    <td><input type="text" id = "text-field" readonly='readonly' value = "<?php echo $nome ?>"></td>
+    <td><input  onclick="toggleReadOnly('text-field');" type = "submit" value = "Alterar"></td>
   </tr>
   <tr>
     <th>Senha</th>
-    <td name = 'nome'><?php echo $senha?></td>
-    <td><input type = "submit" value = "Alterar"></td>
+    <td><input id = "text-field2" name = "senha" type="text" readonly='readonly' value = "<?php echo $senha?>"></td>
+    <td><input id="button-2" onclick="toggleReadOnly('text-field2');" toggle = "#text-field" type = "submit" value = "Alterar">
+  </td>
   </tr>
 </table> 
     <p style = "color: #ff6d6d; font-size: 30px" ><?php echo $e ?> </p>             
-</div>            
+</div>  
+
+<form  method = "POST"  action  = "/alteracao" >
+<!-- botões para salvar ou cancelar uma alteração------------------------------ -->
+<input class = "salva" style= "background-color: #42b72a; margin-top:10px;margin-left: 40% ;display:none;width:100px"  type   = "submit" value = "Salvar"> 
+   
+
+<input class = "cancela" style= "background-color: #ff6d6d; margin-top:10px;margin-left:20px ;display:none;width:100px"  type   = "submit" value = "Cancelar">
+</form>
 </section>
 
 <section id    = "aviso" class = "quadro_geral">
 <div     class = "quadro_de_aviso">
-
     <div class = "aviso_titulo">
       <p>AVISO</p>
 
@@ -62,4 +70,6 @@
 </body>
 </html>
 
+<script src = "https://code.jquery.com/jquery-1.9.1.js"></script>
 <script src = "/assets/js/opencad.js"></script>
+<script src = "/assets/js/btn.js"></script>

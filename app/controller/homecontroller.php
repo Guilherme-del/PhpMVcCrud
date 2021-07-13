@@ -51,13 +51,16 @@ class homeController{
   try{  
   $user = new User;
   $user -> setId($_POST['Dashid']);
+  var_dump($id);
+  die();
+
   $user -> alterauser();
 
   include "app/view/dashboard.php";
 
 }
   catch (Exception $e){
-    $e = 'Impossível alterar dado de conta recentemente criada, Logue com a conta e a possibilidade se habilitará';
+    $e = 'Impossível alterar dados de conta recentemente criada, Logue com a conta e a possibilidade se habilitará';
     include "app/view/index.php"; 
   } 
  }

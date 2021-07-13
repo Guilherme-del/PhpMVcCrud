@@ -57,9 +57,17 @@ cursor: pointer;
     font-family: Arial;
 }
 
+th, td {
+  padding: 5px;
+}
+
 table, td, th {    
   border: 1px solid #ddd;
   text-align: left;
+}
+
+table tr {
+  width: 200px;
 }
 
 table {
@@ -68,18 +76,22 @@ table {
   margin-top: 20px;
 }
 
-table input[type="submit"] {  background  : #28d;
+input[type="submit"] {  background  : #28d;
   border-color: transparent;
   color       : #fff;
   cursor      : pointer; 
   padding: 8px;
+  border-radius:10px ;
+  box-shadow: 2px 2px 5px #809093;
+  /*   box-shadow: 10px 10px 5px #809093; */
 }
 
-table input[type="submit"]:hover {  background: #17c;}
+input[type="submit"]:hover {  background: #17c;}
 
-th, td {
-  padding: 15px 5px;
-}
+table input[type="text"]{padding: 5px;
+font-size: 15px;}
+
+
 
 .box_dashboard h1 {margin-top: 20px;}
 
