@@ -12,7 +12,7 @@ class homeController{
     $user -> setEmail($_POST['email']);
     $user -> setSenha($_POST['senha']);
     $user -> validateLogin();
-    $nome = $user -> getNome();
+    $nome = $user -> getNome();  
     $email = $user -> getEmail();
     $senha = $user -> getSenha();
     $id = $user -> getId(); 
@@ -51,12 +51,18 @@ class homeController{
   try{  
   $user = new User; 
   $user -> setId($_POST['Dashid2']); 
-  $user -> setNome($_POST['Dashnome']);
-  $user -> setSenha($_POST['Dashsenha']);
-
+  $user -> setNome($_POST['dashnome']);
+  $user -> setSenha($_POST['dashsenha']);
   $user -> alterauser();
 
+  $saudandoamandioca = $user -> saudacoes();
+  $email = $user -> getEmailAlterado();
+  $nome = $user -> getNomeAlterado();
+  $senha = $user -> getSenhaAlterada();
+
+
   include "app/view/dashboard.php";
+  echo  "<script>alert('Dados alterados');</script>";
 }
   catch (Exception $e){
     $e = 'Impossível alterar dados de conta recentemente criada, Logue com a conta e a possibilidade se habilitará';

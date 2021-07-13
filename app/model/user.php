@@ -1,14 +1,12 @@
 <?php
-
 use conexao\database\Connection;
 
 class User 
     {   
     private $id;
-    public $nome;
+    private $nome;
     private $email;
-    private $senha;
-    
+    private $senha;    
 // 'C'RUD  CREATE ------------------------------------------------------------------<
     public function criauser(){
         $conn = Connection::getConn();             
@@ -71,21 +69,39 @@ class User
             }
         }            
     }
-
+// CR'U'D Update ----------------------------------------------------------------<
     public function alterauser(){
         $conn = Connection::getConn();             
-        $sql = 'UPDATE usuarios SET nome = :nome, senha =:senha WHERE id = :id';
+        
          // ':' impede invasões do tipo sqlinjection (um pouco de segurança a mais para o site)
+        
+        if (($this->nome <> '' )&& ($this->senha <> '') ) {
+        $sql = 'UPDATE usuarios SET nome = :nome, senha =:senha WHERE id = :id';
         $stmt = $conn->prepare($sql);
         $stmt->bindParam(':id', $this -> id);
         $stmt->bindParam(':nome', $this->nome);
-        $stmt->bindParam(':senha', $this->senha);  
-       
-        $stmt->execute(); 
-        
+        $stmt->bindParam(':senha', $this->senha); 
+        }
+        elseif (($this->senha === '' )) {
+            $sql = 'UPDATE usuarios SET nome = :nome WHERE id = :id';
+            $stmt = $conn->prepare($sql);
+            $stmt->bindParam(':id', $this -> id);
+            $stmt->bindParam(':nome', $this->nome);  
+        }
+        elseif (($this->nome === '' )){
+            $sql = 'UPDATE usuarios SET senha = :senha WHERE id = :id';
+            $stmt = $conn->prepare($sql);
+            $stmt->bindParam(':id', $this -> id);
+            $stmt->bindParam(':senha', $this->senha);
+        }
+        else {
+            $stmt->bindParam(':id', $this -> id);
+        }
+        $stmt->execute();        
         if($stmt->rowCount()>0){
-            return true;
-        }else{
+        return true; 
+        }
+        else{
         throw new \Exception('Impossivel alterar cliente recentemente cadastrado');   
         }
     }
@@ -107,7 +123,7 @@ class User
         }
     }
 
-    // funções que determinar o valor de uma variavel -----------------------------<
+// funções que determinam o valor de uma variavel -------------------------------<
     public function setId ($id){
         $this -> id = $id;
     }
@@ -123,8 +139,7 @@ class User
     public function setNome ($nome){
         $this -> nome = $nome;
     }
-
-    // Vou melhorar esses get's aparentam ser muito desnecessarios e repetitivos ----<
+// Vou melhorar esses get's aparentam ser muito desnecessarios e repetitivos -------<
     public function getId (){
         $conn = Connection::getConn();
         $sql = 'SELECT * FROM usuarios WHERE email = :email';
@@ -155,18 +170,45 @@ class User
 
         return $nome;
     }
-    public function getEmail (){
+    public function getNomeAlterado (){
         $conn = Connection::getConn();
-        $sql = 'SELECT * FROM usuarios WHERE email = :email';
+        $sql = 'SELECT * FROM usuarios WHERE id = :id';
         $stmt = $conn->prepare($sql);
-        $stmt->bindValue(':email', $this->email);
+        $stmt->bindValue(':id', $this->id);
         $stmt->execute();
 
         if ($stmt->rowCount()){
         $result = $stmt->fetch();  
         }
+        $nome = $result['nome'];
+
+        return $nome;
+    }
+    public function getEmail(){
+        $conn = Connection::getConn();
+        $sql = 'SELECT * FROM usuarios WHERE email = :email';
+        $stmt = $conn->prepare($sql);
+        $stmt->bindValue(':email', $this->email);
+        $stmt->execute();
+       
+        if ($stmt->rowCount()){
+        $result = $stmt->fetch();  
+        }
         $email = $result['email'];
 
+        return $email;
+    }
+    public function getEmailAlterado (){
+        $conn = Connection::getConn();
+        $sql = 'SELECT * FROM usuarios WHERE id = :id';
+        $stmt = $conn->prepare($sql);
+        $stmt->bindValue(':id', $this->id);
+        $stmt->execute();
+       
+        if ($stmt->rowCount()){
+        $result = $stmt->fetch();  
+        }
+        $email = $result['email'];
         return $email;
     }
     public function getSenha (){
@@ -183,7 +225,21 @@ class User
 
         return $senha;
     }
-// -----------------------------------------------------------------------------<
+    public function getSenhaAlterada (){
+        $conn = Connection::getConn();
+        $sql = 'SELECT * FROM usuarios WHERE id = :id';
+        $stmt = $conn->prepare($sql);
+        $stmt->bindValue(':id', $this->id);
+        $stmt->execute();
+
+        if ($stmt->rowCount()){
+        $result = $stmt->fetch();  
+        }
+        $senha = $result['senha'];
+
+        return $senha;
+    }
+// Frescura.php -------------------------------------------------------------------<
     public function saudacoes (){
     	date_default_timezone_set('America/Sao_Paulo');
 	$hora = date('H');
