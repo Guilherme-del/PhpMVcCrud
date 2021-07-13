@@ -26,12 +26,12 @@
   <table>
   <tr>
     <th>Nome</th>   
-    <td><input type="text" id = "text-field" readonly='readonly' value = "<?php echo $nome ?>"></td>
+    <td><input type="text" id = "text-field" readonly='readonly' name= "dashnome" value = "<?php echo $nome ?>"></td>
     <td><input  onclick="toggleReadOnly('text-field');" type = "submit" value = "Alterar"></td>
   </tr>
   <tr>
     <th>Senha</th>
-    <td><input id = "text-field2" name = "senha" type="text" readonly='readonly' value = "<?php echo $senha?>"></td>
+    <td><input id = "text-field2" name = "dashsenha" type="text" readonly='readonly' value = "<?php echo $senha?>"></td>
     <td><input id="button-2" onclick="toggleReadOnly('text-field2');" toggle = "#text-field" type = "submit" value = "Alterar">
   </td>
   </tr>
@@ -41,8 +41,9 @@
 
 <form  method = "POST"  action  = "/alteracao" >
 <!-- botões para salvar ou cancelar uma alteração------------------------------ -->
+<input type="hidden" name = 'Dashid2' id = 'Dashid2' value = "<?php echo $id?>"> 
+
 <input class = "salva" style= "background-color: #42b72a; margin-top:10px;margin-left: 40% ;display:none;width:100px"  type   = "submit" value = "Salvar"> 
-   
 
 <input class = "cancela" style= "background-color: #ff6d6d; margin-top:10px;margin-left:20px ;display:none;width:100px"  type   = "submit" value = "Cancelar">
 </form>
@@ -63,6 +64,7 @@
       <form     method = "POST" action  = "/excluir" class = "exclui_container">
       <input type="hidden" name = 'Dashid' id = 'Dashid' value = "<?php echo $id?>">
       <p><input type   = "submit" value = "Estou ciente"></p>
+
     </form>
     </div>
   </div>

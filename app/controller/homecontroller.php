@@ -49,22 +49,20 @@ class homeController{
 
  public function alteracao () {
   try{  
-  $user = new User;
-  $user -> setId($_POST['Dashid']);
-  var_dump($id);
-  die();
+  $user = new User; 
+  $user -> setId($_POST['Dashid2']); 
+  $user -> setNome($_POST['Dashnome']);
+  $user -> setSenha($_POST['Dashsenha']);
 
   $user -> alterauser();
 
   include "app/view/dashboard.php";
-
 }
   catch (Exception $e){
     $e = 'Impossível alterar dados de conta recentemente criada, Logue com a conta e a possibilidade se habilitará';
     include "app/view/index.php"; 
   } 
  }
-
 
  public function exclui () {
   try{  

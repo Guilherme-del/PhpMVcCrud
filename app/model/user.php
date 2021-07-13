@@ -9,6 +9,24 @@ class User
     private $email;
     private $senha;
     
+// 'C'RUD  CREATE ------------------------------------------------------------------<
+    public function criauser(){
+        $conn = Connection::getConn();             
+        $sql = 'INSERT INTO usuarios (nome,email,senha) values (:nome,:email,:senha)';
+         // ':' impede invasões do tipo sqlinjection (um pouco de segurança a mais para o site)               
+        $stmt = $conn->prepare($sql);
+        $stmt->bindParam(':nome', $this->nome);  
+        $stmt->bindParam(':email', $this->email);
+        $stmt->bindParam(':senha', $this->senha);
+        $stmt->execute(); 
+               
+        if($stmt->rowCount()>0){
+            return true;
+        }else{
+            echo "Não Cadastrou";
+        }
+    }
+// C'R'UD READ ------------------------------------------------------------------<
     public function validateLogin(){
         $conn = Connection::getConn();             
         $sql = 'SELECT * FROM usuarios WHERE email = :email'; // :email impede invasões do tipo sqlinjection (um pouco de segurança a mais para o site)
@@ -16,7 +34,6 @@ class User
         $stmt = $conn->prepare($sql);
         $stmt->bindValue(':email', $this->email);
         $stmt->execute();
-
 
         if ($stmt->rowCount() && $this->senha <> null)
         {         
@@ -55,31 +72,32 @@ class User
         }            
     }
 
-    public function criauser(){
+    public function alterauser(){
         $conn = Connection::getConn();             
-        $sql = 'INSERT INTO usuarios (nome,email,senha) values (:nome,:email,:senha)';
-         // ':' impede invasões do tipo sqlinjection (um pouco de segurança a mais para o site)               
+        $sql = 'UPDATE usuarios SET nome = :nome, senha =:senha WHERE id = :id';
+         // ':' impede invasões do tipo sqlinjection (um pouco de segurança a mais para o site)
         $stmt = $conn->prepare($sql);
-        $stmt->bindParam(':nome', $this->nome);  
-        $stmt->bindParam(':email', $this->email);
-        $stmt->bindParam(':senha', $this->senha);
+        $stmt->bindParam(':id', $this -> id);
+        $stmt->bindParam(':nome', $this->nome);
+        $stmt->bindParam(':senha', $this->senha);  
+       
         $stmt->execute(); 
-               
+        
         if($stmt->rowCount()>0){
             return true;
         }else{
-            echo "Não Cadastrou";
+        throw new \Exception('Impossivel alterar cliente recentemente cadastrado');   
         }
     }
 
+// CRU'D' DELETE ------------------------------------------------------------------<
     public function excluiuser(){
         $conn = Connection::getConn();             
         $sql = 'DELETE FROM  usuarios WHERE id = :id';
          // ':' impede invasões do tipo sqlinjection (um pouco de segurança a mais para o site)
         $stmt = $conn->prepare($sql);
         $stmt->bindParam(':id', $this -> id);
-
-
+        
         $stmt->execute(); 
         
         if($stmt->rowCount()>0){
@@ -89,6 +107,7 @@ class User
         }
     }
 
+    // funções que determinar o valor de uma variavel -----------------------------<
     public function setId ($id){
         $this -> id = $id;
     }
