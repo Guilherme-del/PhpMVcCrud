@@ -18,7 +18,7 @@ class homeController{
     $id = $user -> getId(); 
     $saudandoamandioca = $user -> saudacoes();
 
-    include "app/view/dashboard.php";    
+    include "app/view/dashboard.php";        
   }        
     catch(Exception $e){
       $e = 'Login inválido, cadastre-se';
@@ -59,7 +59,7 @@ class homeController{
   $email = $user -> getEmailAlterado();
   $nome = $user -> getNomeAlterado();
   $senha = $user -> getSenhaAlterada();
-
+  $id = $user -> getIdAlterado();  
 
   include "app/view/dashboard.php";
   echo  "<script>alert('Dados alterados');</script>";

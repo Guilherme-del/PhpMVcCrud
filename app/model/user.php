@@ -95,7 +95,7 @@ class User
             $stmt->bindParam(':id', $this -> id);
             $stmt->bindParam(':senha', $this->senha);
         }
-        else {
+        elseif(($this->nome <> '' )&& ($this->senha <> '')) {
             $stmt->bindParam(':id', $this -> id);
         }
         $stmt->execute();        
@@ -106,7 +106,6 @@ class User
         throw new \Exception('Impossivel alterar cliente recentemente cadastrado');   
         }
     }
-
 // CRU'D' DELETE ------------------------------------------------------------------<
     public function excluiuser(){
         $conn = Connection::getConn();             
@@ -153,9 +152,11 @@ class User
         if ($stmt->rowCount()){
         $result = $stmt->fetch();  
         }
-        $id = $result['id'];
-        
+        $id = $result['id'];   
         return $id;
+    }
+    public function getIdAlterado (){  
+        return $this -> id;
     }
     public function getNome (){
         $conn = Connection::getConn();
