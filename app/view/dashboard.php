@@ -16,7 +16,7 @@
         <header>
             <div class = "content_area">
           <?php echo $saudandoamandioca; echo $nome ?>
-                <a href  = "/index">Sair</a>
+                <a href  = "/sair">Sair</a>
                 <a class = "botao" onclick = 'aviso()'>Excluir conta</a>
             </div>            
         </header>
@@ -55,7 +55,6 @@
 <div     class = "quadro_de_aviso">
     <div class = "aviso_titulo">
       <p>AVISO</p>
-
       <a class = "aviso_fechar" onclick = 'avisofechar()'>x</a>
     </div>
     

@@ -13,8 +13,8 @@ switch($pagina[1]){
     
   case "check": 
   $ctrl->check();
-  break; 
-
+  break;
+  
   case "cadastro": 
   $ctrl->cadastro();
   break; 

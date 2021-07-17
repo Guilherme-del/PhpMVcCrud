@@ -27,24 +27,25 @@ class User
 // C'R'UD READ ------------------------------------------------------------------<
     public function validateLogin(){
         $conn = Connection::getConn();             
-        $sql = 'SELECT * FROM usuarios WHERE email = :email'; // :email impede invasões do tipo sqlinjection (um pouco de segurança a mais para o site)
+        $sql = 'SELECT * FROM usuarios WHERE email = :email AND senha = :senha' ; // :email impede invasões do tipo sqlinjection (um pouco de segurança a mais para o site)
                    
         $stmt = $conn->prepare($sql);
         $stmt->bindValue(':email', $this->email);
+        $stmt->bindValue(':senha', $this->senha);
         $stmt->execute();
 
-        if ($stmt->rowCount() && $this->senha <> null)
+        if ($stmt->rowCount())
         {         
             $result = $stmt->fetch(); 
 
             if ($result['senha'] === $this->senha) {
-                $_SESSION['usuarioID'] = $result['id']; 
-                $_SESSION['usuarioNome'] = $result['nome'];
-                $_SESSION['usuarioMail'] = $result['email'];
-                $_SESSION['usuarioSenha'] = $result['senha'];            
+                $_SESSION['usr'] = array(
+                    'id_user'   => $result['id'],
+                    'name_user' => $result['name']
+                );           
                 return $result;
         }  
-    }
+        }            
     else {
         throw new \Exception('Login inválido');}
 }
