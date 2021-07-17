@@ -34,3 +34,17 @@ Para acessar o bd copie o arquivo da pasta bd ,agora vamos para seu computadar v
         <img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white&link=mailto:https://www.linkedin.com/in/guilherme-cavenaghi-589166166/">
     </a>
 </p>
+<h2 align = "center"> Agradecimentos</h2>
+<p align="center">
+Rafael Capoani  <br>
+        <a href="https://www.youtube.com/channel/UC5F-7EOd9_uRLAa1myXPVxA" target = "blank">
+        <img src="https://img.shields.io/badge/youtube-D14836?&style=for-the-badge&logo=youtube&logoColor=white&link=mailto:https://www.youtube.com/channel/UC5F-7EOd9_uRLAa1myXPVxA">      
+    </a>
+<br>Luis Antonio Coelho <br> 
+           <a href="https://github.com/luis15" target = "blank">
+        <img  src="https://img.shields.io/badge/github-%23100000.svg?&style=for-the-badge&logo=github&logoColor=white&link=mailto:https://github.com/luis15">
+    </a>
+    <br>Matheus Oliveira <br>  
+        <a href="https://github.com/MatheusOliveira10" target = "blank">
+        <img  src="https://img.shields.io/badge/github-%23100000.svg?&style=for-the-badge&logo=github&logoColor=white&link=mailto:https://github.com/MatheusOliveira10">
+</p>
